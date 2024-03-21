@@ -19,16 +19,32 @@ const songs = [
 const guardians = {
     "Star-Lord": "Rock",
     "Gamora": "Pop",
+    "Drax":"Rock",
+    "Rocket":"Pop",
+    "Groot":"Rock",
     // Add preferences for Drax, Rocket, and Groot
 };
 
 // Function to generate playlist based on preferred genre
 function generatePlaylist(guardians, songs) {
-    // Use the map() function to create playlists for each Guardian
-    // Your code here
+     let playlist={};
+    for(let guardian in guardians){
+        let preferredGenre=guardians[guardian];
+        let playlist=songs.filter(song=>song.genre===preferredGenre);
+        playlist[guardian]=playlist;
+    }
+    return playlist;
 }
-
 // Call generatePlaylist and display the playlists for each Guardian
-generatePlaylist(guardians, songs);
+let playlist=generatePlaylist(guardians, songs);
+for(let guarding in playlist){
+    console.log(`${guardian}'s Playlist:`);
+
+    playlist[guarding].forEach(song =>{
+        console.log(`${song.title}-${song.artist}`);
+
+    });
+    console.log();
+}
 
 
