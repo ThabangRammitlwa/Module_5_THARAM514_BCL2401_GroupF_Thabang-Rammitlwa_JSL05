@@ -41,7 +41,7 @@ let playlist=generatePlaylist(guardians, songs);
 for(let guardian in playlist){
     console.log(`${guardian}'s Playlist:`);
 
-    playlist[guarding].forEach(song =>{
+    playlist[guardian].forEach(song =>{
         console.log(`${song.title}-${song.artist}`);
 
     });
