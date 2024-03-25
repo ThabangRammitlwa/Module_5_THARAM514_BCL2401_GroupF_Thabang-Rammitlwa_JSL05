@@ -1,3 +1,4 @@
+
 // Array of song objects. Add at least 5 songs with title, artist, and genre properties.
 const songs = [
     { title: "Hooked on a Feeling", artist: "Blue Swede", genre: "Pop" },
@@ -30,21 +31,22 @@ function generatePlaylist(guardians, songs) {
      let playlist={};
     for(let guardian in guardians){
         let preferredGenre=guardians[guardian];
-        let playlist=songs.filter(song=>song.genre===preferredGenre);
-        playlist[guardian]=playlist;
+        let filteredSongs=songs.filter(song=>song.genre===preferredGenre);
+        playlist[guardian]=filteredSongs;
     }
     return playlist;
 }
 // Call generatePlaylist and display the playlists for each Guardian
 let playlist=generatePlaylist(guardians, songs);
-for(let guarding in playlist){
+for(let guardian in playlist){
     console.log(`${guardian}'s Playlist:`);
 
     playlist[guarding].forEach(song =>{
         console.log(`${song.title}-${song.artist}`);
 
     });
-    console.log();
+    console.log(); 
 }
+
 
 
