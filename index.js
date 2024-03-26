@@ -26,21 +26,66 @@ const guardians = {
 
 // Function to generate playlist based on preferred genre
 function generatePlaylist(guardians, songs) {
-    // Use the map() function to create playlists for each Guardian
-    return Object.keys(guardians).map((result, guardian) => {
-        const preferredGenre = guardians[guardian];
-        result[guardian] = songs.filter(song => song.genre === preferredGenre);
-        return result;
+    const playlists = {};
+
+    // Map through each guardian and their preferred genre
+    Object.entries(guardians).forEach(([guardian, genre]) => {
+        // Filter songs by the guardian's preferred genre
+        const genreSongs = songs.filter(song => song.genre === genre);
+
+        // Store the playlist for the guardian
+        playlists[guardian] = genreSongs.map(song => `${song.artist} - ${song.title}`);
     });
 
+    return playlists;
 }
 
 // Call generatePlaylist and display the playlists for each Guardian
-const playlists = generatePlaylist(guardians, songs);
-Object.entries(playlists).forEach(([guardian, playlist]) => {
-    console.log(`${guardian}'s Playlist:`);
-    playlist.forEach(song => {
-        console.log(`${song.title} - ${song.artist}`);
+
+function displayPlaylists(playlists) {
+    // Iterate through the playlists object
+    Object.entries(playlists).forEach(([guardian, playlist]) => {
+        // Create a new div element for each playlist
+        const playlistElement = document.createElement('div');
+        playlistElement.classList.add('playlist'); // Add 'playlist' class
+
+        // Create a heading for playlist with guardian's name
+        const heading = document.createElement("h1");
+        heading.textContent =`${guardian}'s playlist`;
+        playlistElement.appendChild(heading);
+
+        // Create an unordered list that contains the songs
+        const songList = document.createElement('ul');
+
+        // Iterate through each song in playlist
+        playlist.forEach(song => {
+            // Split the song into artist and song title
+            const [artist, title] = song.split(' - ');
+
+            // Create a li element for each song
+            const songItem = document.createElement('ul');
+            songItem.classList.add('song'); // Add 'song' class
+            const songTitle = document.createElement('span');
+            songTitle.classList.add('song-title'); // Add 'song-title' class
+            songTitle.textContent = title;
+            const artistName = document.createElement('span');
+            artistName.textContent = ` by ${artist}`;
+            songItem.appendChild(songTitle);
+            songItem.appendChild(artistName);
+            songList.appendChild(songItem);
+        });
+
+        // Append the song list to the playlist div
+        playlistElement.appendChild(songList);
+
+        // Append the playlist div to the document body
+        document.body.appendChild(playlistElement);
     });
-    console.log();
-});
+}
+
+
+// Generate playlists
+const playlists = generatePlaylist(guardians, songs);
+
+// Display playlists
+displayPlaylists(playlists);
