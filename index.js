@@ -32,6 +32,7 @@ function generatePlaylist(guardians, songs) {
         result[guardian] = songs.filter(song => song.genre === preferredGenre);
         return result;
     }, {});
+
 }
 
 // Call generatePlaylist and display the playlists for each Guardian
@@ -43,3 +44,5 @@ Object.entries(playlists).forEach(([guardian, playlist]) => {
     });
     console.log();
 });
+
+displayPlaylist(playlists);
