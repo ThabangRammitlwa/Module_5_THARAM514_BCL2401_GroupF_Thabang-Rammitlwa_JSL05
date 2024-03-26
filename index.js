@@ -27,11 +27,11 @@ const guardians = {
 // Function to generate playlist based on preferred genre
 function generatePlaylist(guardians, songs) {
     // Use the map() function to create playlists for each Guardian
-    return Object.keys(guardians).reduce((result, guardian) => {
+    return Object.keys(guardians).map((result, guardian) => {
         const preferredGenre = guardians[guardian];
         result[guardian] = songs.filter(song => song.genre === preferredGenre);
         return result;
-    }, {});
+    });
 
 }
 
@@ -44,5 +44,3 @@ Object.entries(playlists).forEach(([guardian, playlist]) => {
     });
     console.log();
 });
-
-displayPlaylist(playlists);
