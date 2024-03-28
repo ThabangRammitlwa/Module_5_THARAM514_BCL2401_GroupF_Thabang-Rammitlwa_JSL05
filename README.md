@@ -20,4 +20,4 @@ The application comes with a predefined set of songs, but you can easily add mor
 Each Guardian's preferred genre is specified in the guardians object. You can modify this object to reflect each Guardian's musical tastes.
 
 # Challenges faced
-Manipulating the DOM,had to go back on understanding DOM better, still not my strongest point but, its Promising.
+Manipulating the DOM,had to go back on understanding DOM better, still not my strongest point but, its promising.
