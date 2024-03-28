@@ -1,52 +1,23 @@
 # [JSL05] Submission: Galaxy Playlist Generator
 
-You will:
-1. Use the provided Starter Code Repository: https://github.com/CodeSpace-Academy/Module_5_StudentNo_Classcode_Group_Name-Surname_JSL05
-2. Code your solution.
-3. Commit changes to your GitHub repository.
-4. Submit the GitHub Repository Link to the LMS [JSL05] Submission Project Tab.
+# Overview
+Guardians of the Playlist is a JavaScript application that generates personalized playlists for each Guardian based on their preferred genre. The playlists are created from a collection of songs, and each Guardian's playlist consists of songs belonging to their favorite genre.
 
-Check out the practice challenges on Scrimba here: https://scrimba.com/playlist/pXXzN5GT6
+# Features
+Personalized Playlists: Each Guardian gets a playlist tailored to their preferred genre.
+Dynamic Display: Playlists are dynamically generated and displayed in the web browser.
+Easy-to-Read Format: Playlists are presented neatly, with each song listed along with its title and artist.
+How It Works
+Song Collection: An array of song objects is provided, with each song having properties for title, artist, and genre.
+Guardian Preferences: The preferred genre for each Guardian is defined in an object.
+Playlist Generation: The generatePlaylist function filters songs based on each Guardian's preferred genre and organizes them into playlists.
+Display: The displayPlaylists function creates HTML elements to display each Guardian's playlist in the web browser.
 
-### Galaxy Playlist Generator
+# Song Collection
+The application comes with a predefined set of songs, but you can easily add more songs to expand the collection.
 
-In this challenge, you'll combine your knowledge of JavaScript arrays and the `map()` function to create a personalized "Awesome Mix" playlist for each of the Guardians of the Galaxy. Your task is to filter and organize songs based on each Guardian's musical preference, displaying a playlist tailored just for them.
+# Guardian Preferences
+Each Guardian's preferred genre is specified in the guardians object. You can modify this object to reflect each Guardian's musical tastes.
 
-![alt text](JSL05_solution.png)
-
-#### Instructions:
-
-1. **Expand the Songs Array**: Add at least five songs to the `songs` array, each with `title`, `artist`, and `genre`.
-2. **Assign Preferences**: Complete the `guardians` object by assigning each Guardian their preferred music genre.
-3. **Generate Playlists**: Implement the `generatePlaylist` function. Use the `map()` function to create a personalized playlist for each Guardian based on their genre preference.
-4. **Display Playlists**: Dynamically create and append elements to the `#playlists` div to display each Guardian's playlist. Include the Guardian's name and their list of songs.
-5. **Test Your Application**: Ensure that your application correctly filters songs by genre for each Guardian and displays the playlists on the web page.
-
-## What You Need to Do:
-
-1. Clone the provided Starter Code Repository to your local development environment (e.g., VSCode): https://github.com/CodeSpace-Academy/Module_5_StudentNo_Classcode_Group_Name-Surname_JSL05
-2. Open the cloned project in your code editor.
-3. Code your solution for each of the challenges as per the provided instructions.
-4. Commit your changes to your local Git repository with meaningful commit messages.
-5. Push your local Git repository to your GitHub account.
-6. Verify that the changes have been successfully pushed to your GitHub repository.
-
-## What You Need to Include:
-
-1. Ensure that your code includes the necessary modifications to meet the challenge requirements.
-2. Your GitHub repository should contain the updated code files.
-
-## How We'll Assess Your Work:
-
-1. We will review your GitHub repository to ensure that it contains the updated code files.
-2. We will assess the modifications made to the code to verify that they effectively meet the challenge requirements.
-3. We will consider the commit history and meaningful commit messages to evaluate your coding process.
-
-This challenge will test your ability to manipulate arrays and objects, use the `map()` function for data transformation, and dynamically update the DOM based on data. Good luck, and may your mix be truly awesome!
-
-
-
-
-
-
-
+# Challenges faced
+Manipulating the DOM,had to go back on understanding DOM better, still not my strongest point but, its Promising.
