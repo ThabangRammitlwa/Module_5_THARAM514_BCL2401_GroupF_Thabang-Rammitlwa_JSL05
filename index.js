@@ -29,7 +29,7 @@ function generatePlaylist(guardians, songs) {
     const playlists = {};
 
     // Map through each guardian and their preferred genre
-    Object.entries(guardians).forEach(([guardian, genre]) => {
+    Object.entries(guardians).map(([guardian, genre]) => {
         // Filter songs by the guardian's preferred genre
         const genreSongs = songs.filter(song => song.genre === genre);
 
